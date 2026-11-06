@@ -58,6 +58,15 @@ public interface AsyncQueueWriter<L> extends Writer<L>, AsyncQueue {
     int MIN_PENDING_BYTES_HARD_LIMIT_MULTIPLIER = 4;
 
     /**
+     * Former name of {@link #MIN_PENDING_BYTES_HARD_LIMIT_MULTIPLIER}, kept for compatibility with
+     * 4.0.2.payara-p4, which published this constant before the multiplier became automatically sized.
+     *
+     * @deprecated use {@link #MIN_PENDING_BYTES_HARD_LIMIT_MULTIPLIER}
+     */
+    @Deprecated
+    int DEFAULT_PENDING_BYTES_HARD_LIMIT_MULTIPLIER = MIN_PENDING_BYTES_HARD_LIMIT_MULTIPLIER;
+
+    /**
      * Method writes the {@link Buffer} to the specific address.
      *
      *
